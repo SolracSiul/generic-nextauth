@@ -5,7 +5,7 @@ import { SyntheticEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default  function Home() {
-
+  console.log('home'+ process.env.NEXTAUTH_URL)
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
 

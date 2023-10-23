@@ -2,7 +2,6 @@ import NextAuth, { NextAuthOptions } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
 const nextAuthOptions: NextAuthOptions = {
-    secret: process.env.NEXTAUTH_SECRET as string,
     providers: [
         CredentialsProvider({
             name: 'apipost',
@@ -42,8 +41,9 @@ const nextAuthOptions: NextAuthOptions = {
             session = token.user as any
             return session
         }
-    }
+    },
 }
+
 const handler = NextAuth(nextAuthOptions)
 
 export { handler as GET, handler as POST , nextAuthOptions}
